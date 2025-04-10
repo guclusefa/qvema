@@ -42,4 +42,12 @@ export class UsersService {
     const savedUser = await this.userRepository.save(newUser);
     return plainToInstance(User, savedUser); //pour exclure le mdp de l'exposition
   }
+
+  async findByEmail(email: string) {
+    const user = plainToInstance(
+      User,
+      await this.userRepository.findOneBy({ email }),
+    );
+    return user;
+  }
 }

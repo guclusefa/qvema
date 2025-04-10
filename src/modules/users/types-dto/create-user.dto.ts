@@ -5,7 +5,6 @@ import {
   IsString,
   MinLength,
 } from 'class-validator';
-//+ config dans main.ts
 import { UserRole } from './user-role.type';
 
 export class CreateUserDto {
